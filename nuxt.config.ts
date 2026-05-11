@@ -4,6 +4,9 @@ import { fileURLToPath } from 'node:url'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
+  app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+  },
   components: [
     {
       path: '~/components',
