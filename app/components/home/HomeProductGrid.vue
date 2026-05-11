@@ -4,13 +4,15 @@ import type { ProductItem } from '~/data/home'
 defineProps<{
   items: ProductItem[]
 }>()
+
+const assetPath = useAssetPath()
 </script>
 
 <template>
   <div class="product-grid">
     <article v-for="item in items" :key="item.title" class="product-card">
       <div class="product-card__media">
-        <img :src="item.image" :alt="item.title" />
+        <img :src="assetPath(item.image)" :alt="item.title" />
       </div>
 
       <div class="product-card__body">

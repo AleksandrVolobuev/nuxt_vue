@@ -7,6 +7,8 @@ defineProps<{
   price: string
   image: string
 }>()
+
+const assetPath = useAssetPath()
 </script>
 
 <template>
@@ -32,7 +34,7 @@ defineProps<{
       </div>
 
       <div class="spotlight__media">
-        <img :src="image" :alt="title" />
+        <img :src="assetPath(image)" :alt="title" />
       </div>
     </div>
   </section>

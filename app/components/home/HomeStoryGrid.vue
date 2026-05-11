@@ -4,13 +4,15 @@ import type { StoryItem } from '~/data/home'
 defineProps<{
   items: StoryItem[]
 }>()
+
+const assetPath = useAssetPath()
 </script>
 
 <template>
   <div class="story-grid">
     <article v-for="item in items" :key="item.title" class="story-card">
       <div class="story-card__icon">
-        <img :src="item.icon" :alt="item.eyebrow" />
+        <img :src="assetPath(item.icon)" :alt="item.eyebrow" />
       </div>
       <span class="story-card__eyebrow">{{ item.eyebrow }}</span>
       <h3 class="story-card__title">{{ item.title }}</h3>

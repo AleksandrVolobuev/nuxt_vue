@@ -4,6 +4,8 @@ import type { StatItem } from '~/data/home'
 defineProps<{
   stats: StatItem[]
 }>()
+
+const assetPath = useAssetPath()
 </script>
 
 <template>
@@ -38,7 +40,7 @@ defineProps<{
       </div>
 
       <div class="hero__visual">
-        <img src="/image1.png" alt="Warm wooden furniture setup" />
+        <img :src="assetPath('/image1.png')" alt="Warm wooden furniture setup" />
         <div class="hero__floating-card">
           <strong>Awarded product design</strong>
           <span>Crafted in Spain with a focus on warm materials and flexible use.</span>

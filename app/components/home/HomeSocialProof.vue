@@ -4,6 +4,8 @@ import type { SocialItem } from '~/data/home'
 defineProps<{
   items: SocialItem[]
 }>()
+
+const assetPath = useAssetPath()
 </script>
 
 <template>
@@ -19,7 +21,7 @@ defineProps<{
 
     <div class="social-proof__gallery">
       <figure v-for="item in items" :key="item.handle">
-        <img :src="item.image" :alt="item.handle" />
+        <img :src="assetPath(item.image)" :alt="item.handle" />
         <figcaption>{{ item.handle }}</figcaption>
       </figure>
     </div>

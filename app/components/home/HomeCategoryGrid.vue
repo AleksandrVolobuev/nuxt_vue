@@ -4,13 +4,15 @@ import type { CategoryItem } from '~/data/home'
 defineProps<{
   items: CategoryItem[]
 }>()
+
+const assetPath = useAssetPath()
 </script>
 
 <template>
   <div class="categories__grid">
     <article v-for="item in items" :key="item.title" class="category-card">
       <div class="category-card__media">
-        <img :src="item.image" :alt="item.title" />
+        <img :src="assetPath(item.image)" :alt="item.title" />
       </div>
 
       <div class="category-card__content">
